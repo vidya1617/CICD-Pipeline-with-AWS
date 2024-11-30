@@ -1,10 +1,11 @@
-#configuration file for code deploy
+# configuration file for CodeDeploy
 version: 0.0
 os: linux
 
 files:
-  - source: /
-    destination: /var/www/html
+  - source: Site1/
+    destination: /var/www/html/
+
 hooks:
   AfterInstall:
     - location: script/install_nginx.sh
@@ -14,4 +15,3 @@ hooks:
     - location: script/start_nginx.sh
       timeout: 300
       runas: root
-
